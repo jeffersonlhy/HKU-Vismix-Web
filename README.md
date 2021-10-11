@@ -22,8 +22,8 @@ Vismix is the platform for HKU student to search course timeslot and build timet
 
 ## **Join Us!**
 
-Excited to join Vismix as a developer to empower the learning community in HKU? Contact the core team of Vismix via the following methods!
- 
+Excited to join Vismix as a developer to empower the learning community in HKU? Contact the core team of Vismix via one of the following methods!
+
 - Email: vismix.core@gmail.com
 - Instagram: https://www.instagram.com/vismix.app/
 
