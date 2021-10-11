@@ -3,7 +3,6 @@
 Vismix is the platform for HKU student to search course timeslot and build timetables without considering the time clashes between courses. 
 
 ## **Application Preview**
-- Main page
 ![App Interface](./misc/AppUI.png)
 
 
