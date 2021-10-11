@@ -1,0 +1,61 @@
+{
+	"name": "vismix",
+	"version": "0.0.1",
+	"description": "HKU Vismix Schedule Planner",
+	"private": true,
+	"main": "src/main.js",
+	"homepage": "./",
+	"author": "Vismix",
+	"dependencies": {
+		"@emotion/react": "^11.4.0",
+		"@emotion/styled": "^11.3.0",
+		"@fullhuman/postcss-purgecss": "^4.0.3",
+		"@material-ui/core": "^4.12.1",
+		"@material-ui/icons": "^4.11.2",
+		"@material-ui/lab": "^4.0.0-alpha.60",
+		"axios": "^0.21.1",
+		"mixpanel-browser": "^2.41.0",
+		"react": "^17.0.2",
+		"react-custom-scrollbars-2": "^4.4.0",
+		"react-dom": "^17.0.2",
+		"react-loading-overlay": "^1.0.1",
+		"react-reveal": "^1.2.2",
+		"react-spinners": "^0.11.0"
+	},
+	"devDependencies": {
+		"autoprefixer": "9",
+		"concurrently": "^6.2.0",
+		"parcel-bundler": "^1.12.5",
+		"postcss": "7",
+		"postcss-loader": "^5.3.0",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"react-scripts": "4.0.3",
+		"shx": "^0.3.3",
+		"tailwindcss": "npm:@tailwindcss/postcss7-compat",
+		"web-vitals": "^1.0.1"
+	},
+	"scripts": {
+		"clean-build": "shx rm -rf build/ .cache dist/",
+		"react-start": "parcel -p 3000 src/index.html",
+		"clean-react-start": "yarn clean-build && parcel -p 3000 src/index.html"
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	}
+}

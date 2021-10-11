@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+}
+
+#orbital-frame{
+    height: 100%;
+}
+
+.main-content{
+    height: calc(100% - 36px);
+}

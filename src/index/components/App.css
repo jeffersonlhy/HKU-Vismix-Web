@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* table {
+	display: table;
+}
+table tr {
+	display: table-cell;
+    text-align: center;
+}
+table tr td {
+	display: block;
+} */
+
+@media screen and (min-width: 800px) {
+    html {
+        font-size: 17px !important;
+    }
+
+    html div.MuiAlert-message {
+        font-size: 14px !important;
+    }
+}
+
+html {
+	font-size: 18px;
+}
+
+.nav-bar {
+	-webkit-app-region: drag;
+}
+
+.window-control-btn {
+	-webkit-app-region: no-drag;
+}
+
+button:focus {
+	outline: 0 !important;
+}
+select:focus {
+	outline: 0 !important;
+}
+
+td {
+	vertical-align: middle;
+	text-align: center;
+	height: 3rem;
+	@apply pt-2;
+}
+
+tr td {
+	@apply py-0;
+}
+
+tr.oddrow {
+	@apply bg-row-grey;
+}
+
+.timetable-header-cell {
+	@apply h-4 px-2 align-middle w-20 leading-4 font-semibold text-ssm;
+}
+
+div.timetable-time-cell {
+	top: -0.93rem;
+	@apply h-8 leading-8 text-ssm relative;
+}
+
+.timetable-content-cell:not(:last-child) {
+	@apply border-r-1 border-line-grey;
+}
+
+.timetable-content-row-colored {
+	@apply grid grid-cols-5 bg-row-grey w-full h-16;
+}
+
+.timetable-content-row {
+	@apply grid grid-cols-5 w-full h-16;
+}
+
+div.timetable-time-prefix-first {
+	@apply h-12 w-full px-3 align-bottom;
+}
+
+div.timetable-time-prefix {
+	height: 3.5rem;
+	@apply px-3;
+}
+
+div.timetable-slot {
+	height: 3.5rem;
+	text-align: center;
+}
+
+/* event */
+.event-block {
+	position: absolute;
+	width: calc(100% / 5);
+	/* background: #227c8a; */
+	width: 100%;
+	height: 2rem;
+}
+
+.day-event-wrapper {
+	position: relative;
+}
+
+.day-event-wrapper:not(:last-child) {
+	width: calc(100% - 1px);
+}
+
+.event-s0830 {
+	top: 0px;
+}
+.event-s0900 {
+	top: 2rem;
+}
+.event-s0930 {
+	top: 4rem;
+}
+.event-s1000 {
+	top: 6rem;
+}
+.event-s1030 {
+	top: 8rem;
+}
+.event-s1100 {
+	top: 10rem;
+}
+.event-s1130 {
+	top: 12rem;
+}
+.event-s1200 {
+	top: 14rem;
+}
+.event-s1230 {
+	top: 16rem;
+}
+.event-s1300 {
+	top: 18rem;
+}
+.event-s1330 {
+	top: 20rem;
+}
+.event-s1400 {
+	top: 22rem;
+}
+.event-s1430 {
+	top: 24rem;
+}
+.event-s1500 {
+	top: 26rem;
+}
+.event-s1530 {
+	top: 28rem;
+}
+.event-s1600 {
+	top: 30rem;
+}
+.event-s1630 {
+	top: 32rem;
+}
+/* rare case */
+.event-s1700 {
+	top: 34rem;
+}
+.event-s1730 {
+	top: 36rem;
+}
+.event-s1800 {
+	top: 38rem;
+}
+
+.delete-icon {
+	color: #797979;
+}
+
+.delete-icon:hover {
+	color: #ff4549;
+}
+
+.MuiSelect-icon {
+	color: #d7d7d7 !important;
+}
