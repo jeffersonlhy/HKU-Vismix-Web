@@ -36,6 +36,7 @@
 		"web-vitals": "^1.0.1"
 	},
 	"scripts": {
+		"build": "parcel build src/index.html NODE_ENV=production --out-dir build/ --public-url ./",
 		"clean-build": "shx rm -rf build/ .cache dist/",
 		"react-start": "parcel -p 3000 src/index.html",
 		"clean-react-start": "yarn clean-build && parcel -p 3000 src/index.html"
