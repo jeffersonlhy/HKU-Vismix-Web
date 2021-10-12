@@ -34,8 +34,6 @@ workflows:
     jobs:
       - build_project:
           filters:
-              branches:
-                ignore: /.*/
               tags:
                 only: /.*/
       - deploy_project:
@@ -43,7 +41,5 @@ workflows:
             - build_project
           context: aws-context
           filters:
-            branches:
-              ignore: /.*/
             tags:
               only: /.*/
