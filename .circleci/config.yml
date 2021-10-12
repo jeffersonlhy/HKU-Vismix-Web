@@ -27,7 +27,7 @@ jobs:
           profile-name: default
       - run:
           name: Upload file to S3
-          command: aws s3 sync ./build/ s3://circle-ci-s3-deploy --delete
+          command: aws s3 sync ./build/ s3://www.vismix.co --delete
 workflows:
   version: 2
   build:
