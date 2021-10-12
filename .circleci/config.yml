@@ -1,0 +1,47 @@
+version: 2.1
+jobs:
+  build_project:
+    working_directory: ~/circle-ci-s3-deploy
+    docker:
+      - image: node:14.18.0
+    steps:
+      - checkout
+      - run:
+          name: Installing dependencies
+          command: yarn
+      - run:
+          name: Building project
+          command: yarn build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+  deploy_project:
+    executor: aws-cli/default
+    steps:
+      - attach_workspace:
+          at: .
+      - aws-cli/setup:
+          profile-name: default
+      - run:
+          name: Upload file to S3
+          command: aws s3 sync ./build/ s3://circle-ci-s3-deploy --delete
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build_project:
+          filters:
+              branches:
+                ignore: /.*/
+              tags:
+                only: /.*/
+      - deploy_project:
+          requires:
+            - build_project
+          context: aws-context
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /.*/
