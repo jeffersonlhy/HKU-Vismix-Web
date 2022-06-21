@@ -2,14 +2,13 @@ import React, {useState, useEffect} from "react";
 import Planner from "./Planner.js"
 import Viewer from "./Viewer.js"
 import Footer from './Footer.js'
-import "./App.css"
 import { Scheduler, Timetable, ControlPane, StatusSection } from "./Scheduler/index.js";
 import { Scrollbars } from 'react-custom-scrollbars-2';
 import LoadingOverlay from 'react-loading-overlay';
 import course from '../data/course.json'
-
-var axios = require('axios');
-var FormData = require('form-data');
+import "./App.css"
+const axios = require('axios');
+const FormData = require('form-data');
 
 
 function Body(){
@@ -32,12 +31,6 @@ function Body(){
     const [resultLength, setResultLength] = useState(0)
 
     useEffect(() => {
-        // axios(config).then(function (response) {
-        //   // console.log(response.data);
-        //     setCourseData(response.data)
-        // }).catch(function (error) {
-        //     console.log(error);
-        // });
         setCourseData(course)
     }, [])
 
