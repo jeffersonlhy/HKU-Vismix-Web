@@ -1,0 +1,38 @@
+upstream docker-api {
+  server api:5000;
+}
+
+server {
+  listen                    443 ssl default_server reuseport;
+  server_name               www.${FQDN} ${FQDN};
+
+  # Load the certificate files.
+  ssl_certificate           /etc/letsencrypt/live/vismix/fullchain.pem;
+  ssl_certificate_key       /etc/letsencrypt/live/vismix/privkey.pem;
+  ssl_trusted_certificate   /etc/letsencrypt/live/vismix/chain.pem;
+  
+  # Load the Diffie-Hellman parameter.
+  ssl_dhparam /etc/letsencrypt/dhparams/dhparam.pem;
+
+  client_max_body_size  4G;
+  keepalive_timeout     5;
+
+  root static;
+  index index.html index.htm;      
+
+  location /api/ {
+     if ($http_origin ~ "${FQDN}$") {
+        add_header "Access-Control-Allow-Origin" $http_origin;
+    }
+    add_header 'Access-Control-Allow-Credentials' 'true';
+    add_header 'Access-Control-Allow-Headers' 'Authorization,Accept,Origin,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range';
+    add_header 'Access-Control-Allow-Methods' 'GET,POST,OPTIONS,PUT,DELETE,PATCH';
+
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header Host $http_host;
+    proxy_redirect off;
+    proxy_pass http://docker-api/;
+  }
+}
